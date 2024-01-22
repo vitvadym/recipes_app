@@ -1,13 +1,13 @@
+import styles from './Layout.module.css';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
-import Pagination from '../components/Pagination/Pagination';
 
 const Layout = () => {
   return (
-    <>
+    <div className={styles.wrapper}>
       <Navbar />
       <Outlet />
-    </>
+    </div>
   );
 };
 
