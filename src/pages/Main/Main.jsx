@@ -4,20 +4,15 @@ import RecipeItem from '../../components/RecipeItem/RecipeItem';
 import useRecipe from '../../hooks/useRecipe';
 
 const Main = () => {
-  const { data, isLoading } = useRecipe();
-  console.log(data);
-
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
+  const { recipes, isLoading } = useRecipe();
 
   return (
     <>
       {isLoading ? (
         <Loader />
       ) : (
-        <div className='flex flex-wrap gap-5 justify-center'>
-          {data.recipes?.map((recipe) => (
+        <div className='flex flex-wrap gap-4 justify-center'>
+          {recipes?.map((recipe) => (
             <RecipeItem
               key={recipe.id}
               recipe={recipe}
@@ -25,6 +20,7 @@ const Main = () => {
           ))}
         </div>
       )}
+      <Pagination />
     </>
   );
 };
