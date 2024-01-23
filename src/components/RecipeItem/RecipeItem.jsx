@@ -27,13 +27,14 @@ const RecipeItem = ({ recipe }) => {
         />
       </div>
       <FaHeart
+        title={isInFavorites ? 'Remove from favorite' : 'Add to favotite'}
         onClick={() => toggleFavorite(recipe)}
         color={isInFavorites ? 'red' : ''}
         className='absolute top-5 right-5 w-6 h-6 cursor-pointer duration-200'
       />
       <div className='flex justify-between items-center gap-3 py-2'>
         <Link
-          to={`recipe/${id}`}
+          to={`/recipe/${id}`}
           className='font-bold cursor-pointer hover:text-gray-600 duration-200'
         >
           <h3>{name}</h3>
