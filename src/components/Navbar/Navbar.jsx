@@ -8,7 +8,12 @@ const Navbar = () => {
   return (
     <nav className='flex flex-col items-center justify-between px-10 py-5 lg:flex-row'>
       <h2 className='font-bold text-2xl text-gray-700'>
-        <Link to={'/'}>Tasty Hub</Link>
+        <Link
+          title='Back to main page'
+          to={'/'}
+        >
+          Tasty Hub
+        </Link>
       </h2>
       <div className='flex items-center justify-between gap-6'>
         <Search />
@@ -18,9 +23,11 @@ const Navbar = () => {
         >
           <Link to={'favorites'}>
             <MdFavoriteBorder className='w-5 h-5' />
-            <span className='absolute rounded-full font-bold shadow-sm text-center bg-red-700 w-[55%] -top-1 -right-2'>
-              {favorites.length}
-            </span>
+            {!!favorites.length && (
+              <span className='absolute rounded-full text-xs py-1 shadow-sm text-center bg-red-600 w-[55%] -top-1 -right-2'>
+                {favorites.length}
+              </span>
+            )}
           </Link>
         </div>
       </div>

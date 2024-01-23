@@ -7,8 +7,6 @@ const RecipeDetails = () => {
   const [details, setDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(details);
-
   useEffect(() => {
     const fetchRecipeDetails = async () => {
       setIsLoading(true);

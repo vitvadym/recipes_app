@@ -40,6 +40,17 @@ const RecipeProvider = ({ children }) => {
     setSkip(page);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!searchQuery) {
+      return;
+    }
+
+    fetchData();
+    setSearchQuery('');
+  };
+
   const value = {
     recipes,
     isLoading,
@@ -50,6 +61,7 @@ const RecipeProvider = ({ children }) => {
     handlePage,
     currentPage,
     pages,
+    handleSubmit,
   };
 
   return (
