@@ -17,19 +17,19 @@ const Navbar = () => {
       </h2>
       <div className='flex items-center justify-between gap-6'>
         <Search />
-        <div
-          title='Favorites'
-          className='relative rounded-full p-3 bg-slate-200 shadow-md cursor-pointer'
-        >
-          <Link to={'favorites'}>
+        <Link to={'favorites'}>
+          <div
+            title='Favorites'
+            className='relative rounded-full p-3 bg-slate-200 shadow-md cursor-pointer'
+          >
             <MdFavoriteBorder className='w-5 h-5' />
             {!!favorites.length && (
               <span className='absolute rounded-full text-xs py-1 shadow-sm text-center bg-red-600 w-[55%] -top-1 -right-2'>
                 {favorites.length}
               </span>
             )}
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </nav>
   );

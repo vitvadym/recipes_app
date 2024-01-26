@@ -51,6 +51,10 @@ const RecipeProvider = ({ children }) => {
     setSearchQuery('');
   };
 
+  const resetSearch = () => {
+    fetchData()
+  }
+
   const value = {
     recipes,
     isLoading,
@@ -62,6 +66,7 @@ const RecipeProvider = ({ children }) => {
     currentPage,
     pages,
     handleSubmit,
+    resetSearch
   };
 
   return (

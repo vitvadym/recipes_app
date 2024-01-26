@@ -2,7 +2,8 @@ import useRecipe from '../../hooks/useRecipe';
 import { CiSearch } from 'react-icons/ci';
 
 const Search = () => {
-  const { searchQuery, setSearchQuery, handleSubmit } = useRecipe();
+  const { searchQuery, setSearchQuery, handleSubmit, resetSearch } =
+    useRecipe();
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
@@ -26,6 +27,12 @@ const Search = () => {
         type='submit'
       >
         <CiSearch />
+      </button>
+      <button
+        onClick={resetSearch}
+        className='px-4 py-2 bg-slate-200 shadow-md rounded-md text-slate-700'
+      >
+        Show All
       </button>
     </form>
   );
